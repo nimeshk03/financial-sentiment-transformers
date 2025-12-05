@@ -21,14 +21,14 @@ This project demonstrates:
 
 ## Current Progress
 
-### Data & Baseline [COMPLETED]
+### Phase 1 : Data & Baseline [COMPLETED]
 
 - [x] **Milestone 1.1**: Environment Setup (Docker, dependencies)
 - [x] **Milestone 1.2**: Data Loading & Exploration (Financial PhraseBank)
 - [x] **Milestone 1.3**: Tokenization Pipeline (unified for all models)
 - [x] **Milestone 1.4**: BERT Baseline with frozen encoder (**62.4% accuracy**)
 
-### Model Comparison [IN PROGRESS]
+### Phase 2 : Model Comparison [IN PROGRESS]
 
 - [x] **Milestone 2.1**: Standardized Training Setup
   - Class weights for imbalanced data
