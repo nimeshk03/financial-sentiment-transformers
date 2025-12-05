@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    # Mount local directories into container
+    # Changes on host are immediately visible in container
+    volumes:
+      - ./data:/app/data           # Dataset files
+      - ./models:/app/models       # Trained model checkpoints
+      - ./outputs:/app/outputs     # Training logs, plots, results
+      - ./notebooks:/app/notebooks # Jupyter notebooks
+      - ./src:/app/src             # Source code (for development)
+      - ./tests:/app/tests         # Test files
+      - ./app:/app/app             # Streamlit app
+      - ./scripts:/app/scripts     # Training scripts
+    
+    # Map container port 8501 to host port 8501
+    ports:
+      - "8501:8501"
+    
+    # Environment variables
+    environment:
+      - PYTHONUNBUFFERED=1         # Print output immediately (no buffering)
+      - PYTHONDONTWRITEBYTECODE=1  # Don't create .pyc files
+    
+    # Keep container running for interactive use
+    stdin_open: true
+    tty: true

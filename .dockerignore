@@ -1,0 +1,42 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Data and models (mounted as volumes instead)
+data/
+models/
+outputs/
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db
+*.egg-info/
+dist/
+build/
+
+# Environment files with secrets
+.env
+*.env
