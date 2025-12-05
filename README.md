@@ -21,14 +21,14 @@ This project demonstrates:
 
 ## Current Progress
 
-### Week 1: Data & Baseline [COMPLETED]
+### Data & Baseline [COMPLETED]
 
 - [x] **Milestone 1.1**: Environment Setup (Docker, dependencies)
 - [x] **Milestone 1.2**: Data Loading & Exploration (Financial PhraseBank)
 - [x] **Milestone 1.3**: Tokenization Pipeline (unified for all models)
 - [x] **Milestone 1.4**: BERT Baseline with frozen encoder (**62.4% accuracy**)
 
-### Week 2: Model Comparison [IN PROGRESS]
+### Model Comparison [IN PROGRESS]
 
 - [x] **Milestone 2.1**: Standardized Training Setup
   - Class weights for imbalanced data
@@ -49,7 +49,6 @@ financial_sentiment_analysis/
 ├── docker-compose.yml
 ├── .dockerignore
 ├── .gitignore
-├── implementation_plan.md      # Detailed project roadmap
 ├── src/
 │   ├── data/
 │   │   ├── dataset.py          # Data loading, splits, class weights
@@ -57,8 +56,8 @@ financial_sentiment_analysis/
 │   ├── models/
 │   │   ├── classifier.py       # SentimentClassifier (supports all 4 models)
 │   │   └── trainer.py          # Training loop, scheduler, early stopping
-│   ├── inference/              # (Week 3)
-│   ├── backtesting/            # (Week 3)
+│   ├── inference/              # 
+│   ├── backtesting/            # 
 │   └── utils/
 ├── scripts/
 │   └── train_baseline.py       # BERT baseline training script
@@ -71,7 +70,7 @@ financial_sentiment_analysis/
 ├── models/                     # Saved model checkpoints
 ├── outputs/                    # Training outputs, metrics
 ├── notebooks/                  # EDA and experimentation
-└── app/                        # Streamlit dashboard (Week 4)
+└── app/                        # Streamlit dashboard 
 ```
 
 ## Quick Start
@@ -176,4 +175,4 @@ MIT
 
 ## Author
 
-Nimesh K
+Nimesh Kulatunga

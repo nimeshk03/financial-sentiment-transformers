@@ -21,7 +21,7 @@ This dashboard will show:
 - Model comparison visualizations  
 - Backtest results
 
-Coming in Week 4...
+Coming in Phase 4...
 """)
 
 # Quick environment check
