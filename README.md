@@ -10,6 +10,20 @@ This project demonstrates:
 - **Production Thinking**: Balancing accuracy, speed, and resource constraints
 - **End-to-End Pipeline**: From raw text to trading signals
 
+## Results
+
+| Model | Parameters | Accuracy | F1 | Inference | Training |
+|-------|------------|----------|-----|-----------|----------|
+| **FinBERT** | 109M | **87.2%** | 0.873 | 0.7ms | 4.2min |
+| RoBERTa | 125M | 84.5% | 0.846 | 0.5ms | 4.3min |
+| BERT | 109M | 84.1% | 0.842 | 0.5ms | 4.1min |
+| DistilBERT | 66M | 81.4% | 0.816 | 0.2ms | 2.1min |
+
+**Key Findings**:
+- Domain-specific **FinBERT outperforms** general models by 3-6%
+- **DistilBERT** achieves 93% of FinBERT's accuracy with 40% fewer parameters and 3.5x faster inference
+- All models show strong neutral class performance (majority class)
+
 ## Models Under Comparison
 
 | Model | Parameters | HuggingFace ID | Key Insight |
@@ -26,18 +40,24 @@ This project demonstrates:
 - [x] **Milestone 1.1**: Environment Setup (Docker, dependencies)
 - [x] **Milestone 1.2**: Data Loading & Exploration (Financial PhraseBank)
 - [x] **Milestone 1.3**: Tokenization Pipeline (unified for all models)
-- [x] **Milestone 1.4**: BERT Baseline with frozen encoder (**62.4% accuracy**)
+- [x] **Milestone 1.4**: BERT Baseline with frozen encoder (62.4% accuracy)
 
-### Phase 2 : Model Comparison [IN PROGRESS]
+### Phase 2 : Model Comparison [COMPLETED]
 
 - [x] **Milestone 2.1**: Standardized Training Setup
   - Class weights for imbalanced data
   - Learning rate scheduler (linear warmup + decay)
-  - Gradient clipping
-  - Early stopping
-- [ ] **Milestone 2.2**: Fine-tune all four models
-- [ ] **Milestone 2.3**: Experiment tracking with W&B
-- [ ] **Milestone 2.4**: Build comparison table
+  - Gradient clipping & early stopping
+- [x] **Milestone 2.2**: Fine-tune all four models (see Results above)
+- [x] **Milestone 2.4**: Build comparison table
+
+### Phase 3: Analysis & Trading Signals [IN PROGRESS]
+
+- [ ] **Milestone 3.1**: Error Analysis
+- [ ] **Milestone 3.2**: Model Selection for Deployment
+- [ ] **Milestone 3.3**: News Ingestion Pipeline
+- [ ] **Milestone 3.4**: Sentiment Aggregation
+- [ ] **Milestone 3.5**: Backtesting Framework
 
 ## Project Structure
 
@@ -60,11 +80,13 @@ financial_sentiment_analysis/
 │   ├── backtesting/            # 
 │   └── utils/
 ├── scripts/
-│   └── train_baseline.py       # BERT baseline training script
+│   ├── train_baseline.py       # BERT baseline training script
+│   └── train_all_models.py     # Multi-model fine-tuning script
 ├── tests/
 │   ├── test_environment.py     # Environment verification
 │   ├── test_data_loading.py    # Data loading tests
-│   └── test_baseline.py        # Model and trainer tests
+│   ├── test_baseline.py        # Model and trainer tests
+│   └── test_finetune.py        # Fine-tuning tests
 ├── data/
 │   └── raw/                    # Financial PhraseBank dataset
 ├── models/                     # Saved model checkpoints
@@ -105,6 +127,18 @@ docker compose run --rm app python scripts/train_baseline.py
 ```
 
 Expected output: ~62% accuracy with frozen BERT encoder.
+
+### Run Full Model Training
+
+```bash
+# Train all 4 models (recommended: use GPU via Google Colab)
+docker compose run --rm app python scripts/train_all_models.py
+
+# Train specific models
+docker compose run --rm app python scripts/train_all_models.py --models bert distilbert
+```
+
+Results saved to `outputs/training/`.
 
 ### Run Tests
 
