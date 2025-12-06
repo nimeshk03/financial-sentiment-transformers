@@ -48,8 +48,14 @@ models/*.bin
 models/*/
 *.ckpt
 
-# Outputs
-outputs/
+# Outputs - model checkpoints (too large)
+outputs/training/*.pt
+outputs/training/*.bin
+
+# Keep analysis outputs but ignore large files
+outputs/analysis/*.csv
+
+# Logs
 *.log
 
 # OS
@@ -69,6 +75,9 @@ wandb/
 
 # HuggingFace cache
 ~/.cache/huggingface/
+
+# Article notes (personal documentation)
+article_notes.md
 
 #.md files
 implementation_plan.md

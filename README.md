@@ -53,7 +53,10 @@ This project demonstrates:
 
 ### Phase 3: Analysis & Trading Signals [IN PROGRESS]
 
-- [ ] **Milestone 3.1**: Error Analysis
+- [x] **Milestone 3.1**: Error Analysis
+  - 87 disagreements (17.9%) between models
+  - FinBERT outperforms BERT on 30 samples where BERT fails
+  - Confusion matrices and agreement visualizations generated
 - [ ] **Milestone 3.2**: Model Selection for Deployment
 - [ ] **Milestone 3.3**: News Ingestion Pipeline
 - [ ] **Milestone 3.4**: Sentiment Aggregation
@@ -76,17 +79,21 @@ financial_sentiment_analysis/
 │   ├── models/
 │   │   ├── classifier.py       # SentimentClassifier (supports all 4 models)
 │   │   └── trainer.py          # Training loop, scheduler, early stopping
+│   ├── analysis/
+│   │   └── error_analysis.py   # Model comparison and error analysis
 │   ├── inference/              # 
 │   ├── backtesting/            # 
 │   └── utils/
 ├── scripts/
 │   ├── train_baseline.py       # BERT baseline training script
-│   └── train_all_models.py     # Multi-model fine-tuning script
+│   ├── train_all_models.py     # Multi-model fine-tuning script
+│   └── run_error_analysis.py   # Error analysis script
 ├── tests/
 │   ├── test_environment.py     # Environment verification
 │   ├── test_data_loading.py    # Data loading tests
 │   ├── test_baseline.py        # Model and trainer tests
-│   └── test_finetune.py        # Fine-tuning tests
+│   ├── test_finetune.py        # Fine-tuning tests
+│   └── test_error_analysis.py  # Error analysis tests
 ├── data/
 │   └── raw/                    # Financial PhraseBank dataset
 ├── models/                     # Saved model checkpoints

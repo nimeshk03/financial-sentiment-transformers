@@ -1,0 +1,331 @@
+{
+  "total_samples": 485,
+  "models_analyzed": [
+    "bert",
+    "roberta",
+    "distilbert",
+    "finbert"
+  ],
+  "per_model": {
+    "bert": {
+      "model_name": "bert",
+      "total_samples": 485,
+      "correct": 404,
+      "incorrect": 81,
+      "accuracy": 0.8329896907216495,
+      "confusion_matrix": [
+        [
+          51,
+          6,
+          4
+        ],
+        [
+          15,
+          238,
+          35
+        ],
+        [
+          1,
+          20,
+          115
+        ]
+      ],
+      "error_patterns": {
+        "negative_as_neutral": {
+          "count": 6,
+          "examples": [
+            "Outokumpu 's steel mill in Tornio , in Finland , is the suspected source .",
+            "Stora Enso 's target has been cut to EUR 4.85 from EUR 5.55 and Holmen 's target -- to SEK 135 from SEK 150 .",
+            "The reduction notice applied to 17 people ."
+          ]
+        },
+        "negative_as_positive": {
+          "count": 4,
+          "examples": [
+            "Return on investment ROI was 4.1 % compared to 43.8 % in the first half of 2008 .",
+            "Expense ratio was 102.6 % compared to 92.9 % in the corresponding period in 2005 .",
+            "Pretax loss totalled EUR 49.9 mn , compared to a loss of EUR 15.4 mn in the corresponding period in 2008 ."
+          ]
+        },
+        "neutral_as_negative": {
+          "count": 15,
+          "examples": [
+            "When cruising , the revs fall as less engine output is required .",
+            "Garmin fell 4.5 percent to $ 34.53 at 1:33 p.m. in New York , while Google slid 0.7 percent at $ 576.50 .",
+            "Sales fell abroad but increased in Finland ."
+          ]
+        },
+        "neutral_as_positive": {
+          "count": 35,
+          "examples": [
+            "Aspo 's strong company brands - ESL Shipping , Leipurin , Telko and Kaukomarkkinat - aim to be the market leaders in their sectors .",
+            "Poyry Energy GmbH is Austria 's leading engineering and consulting company in the energy , infrastructure and environment sector , owned by Poyry Plc. and the Austrian Verbund AG .",
+            "Finnish property investor Sponda said it has agreed a 100 mln eur , five-year mln credit facility with Swedbank and a 50 mln eur , seven-year facility with OKO Bank ."
+          ]
+        },
+        "positive_as_negative": {
+          "count": 1,
+          "examples": [
+            "Key shareholders of Finnish IT services provider TietoEnator Oyj on Friday rejected a hostile EUR1 .08 billion $ 1.67 billion offer from buyout shop Nordic Capital , giving new life to a possible counter offer from Blackstone Group LP and Norwegian telecom Telenor ASA ."
+          ]
+        },
+        "positive_as_neutral": {
+          "count": 20,
+          "examples": [
+            "Ixonos estimates that it will hire 20 specialists in mechanical engineering , electronics design , and R&D for its new unit in Jyvaeskylae by the end of 2009 .",
+            "It currently employs about 750 people and expects headcount to reach 1,000 by end of 2007 .",
+            "In the Asia-Pacific region , Visa Wave is available in Malaysia , Taiwan and South Korea and will be expanded to Japan and Southeast Asia this year , Jung added ."
+          ]
+        }
+      }
+    },
+    "roberta": {
+      "model_name": "roberta",
+      "total_samples": 485,
+      "correct": 413,
+      "incorrect": 72,
+      "accuracy": 0.8515463917525773,
+      "confusion_matrix": [
+        [
+          57,
+          3,
+          1
+        ],
+        [
+          12,
+          243,
+          33
+        ],
+        [
+          1,
+          22,
+          113
+        ]
+      ],
+      "error_patterns": {
+        "negative_as_neutral": {
+          "count": 3,
+          "examples": [
+            "Outokumpu 's steel mill in Tornio , in Finland , is the suspected source .",
+            "The prosecutor is also demanding Outokumpu pay a fine of EUR 800,000 at most .",
+            "Applying for summer work is seen as laborious and stressful ."
+          ]
+        },
+        "negative_as_positive": {
+          "count": 1,
+          "examples": [
+            "Pretax loss totalled EUR 49.9 mn , compared to a loss of EUR 15.4 mn in the corresponding period in 2008 ."
+          ]
+        },
+        "neutral_as_negative": {
+          "count": 12,
+          "examples": [
+            "When cruising , the revs fall as less engine output is required .",
+            "Garmin fell 4.5 percent to $ 34.53 at 1:33 p.m. in New York , while Google slid 0.7 percent at $ 576.50 .",
+            "Metso Foundries Jyvaskyla Oy will discontinue production on this line by 30 September 2008 ."
+          ]
+        },
+        "neutral_as_positive": {
+          "count": 33,
+          "examples": [
+            "Aspo 's strong company brands - ESL Shipping , Leipurin , Telko and Kaukomarkkinat - aim to be the market leaders in their sectors .",
+            "Poyry Energy GmbH is Austria 's leading engineering and consulting company in the energy , infrastructure and environment sector , owned by Poyry Plc. and the Austrian Verbund AG .",
+            "Vacon aims to establish its presence in the solar energy business in various parts of the world towards the end of 2010 , said Olli Teva , marketing director renewable energy applications ."
+          ]
+        },
+        "positive_as_negative": {
+          "count": 1,
+          "examples": [
+            "The members of the management team will contribute to the adjustment measures with temporary salary cut of 5 % ."
+          ]
+        },
+        "positive_as_neutral": {
+          "count": 22,
+          "examples": [
+            "Ixonos estimates that it will hire 20 specialists in mechanical engineering , electronics design , and R&D for its new unit in Jyvaeskylae by the end of 2009 .",
+            "The concept enables a commercially affordable way to manufacture high-quality TCO coated glass for the solar industry .",
+            "It currently employs about 750 people and expects headcount to reach 1,000 by end of 2007 ."
+          ]
+        }
+      }
+    },
+    "distilbert": {
+      "model_name": "distilbert",
+      "total_samples": 485,
+      "correct": 395,
+      "incorrect": 90,
+      "accuracy": 0.8144329896907216,
+      "confusion_matrix": [
+        [
+          53,
+          5,
+          3
+        ],
+        [
+          14,
+          236,
+          38
+        ],
+        [
+          5,
+          25,
+          106
+        ]
+      ],
+      "error_patterns": {
+        "negative_as_neutral": {
+          "count": 5,
+          "examples": [
+            "Outokumpu 's steel mill in Tornio , in Finland , is the suspected source .",
+            "As part of the reorganisation measures that will take place in spring 2006 , Tamglass Finton will start personnel negotiations that will affect its entire staff of 33 .",
+            "The reduction notice applied to 17 people ."
+          ]
+        },
+        "negative_as_positive": {
+          "count": 3,
+          "examples": [
+            "Return on investment ROI was 4.1 % compared to 43.8 % in the first half of 2008 .",
+            "Changes in the market situation and tougher price competition have substantially reduced demand for bread packaging manufactured at the Kauhava plant , according to the company .",
+            "Finnish power supply solutions and systems provider Efore Oyj said its net loss widened to 3.2 mln euro $ 4.2 mln for the first quarter of fiscal 2006-2007 ending October 31 , 2007 from 900,000 euro $ 1.2 mln for the same period of fiscal 2005-06 ."
+          ]
+        },
+        "neutral_as_negative": {
+          "count": 14,
+          "examples": [
+            "When cruising , the revs fall as less engine output is required .",
+            "Garmin fell 4.5 percent to $ 34.53 at 1:33 p.m. in New York , while Google slid 0.7 percent at $ 576.50 .",
+            "Sales fell abroad but increased in Finland ."
+          ]
+        },
+        "neutral_as_positive": {
+          "count": 38,
+          "examples": [
+            "Aspo 's strong company brands - ESL Shipping , Leipurin , Telko and Kaukomarkkinat - aim to be the market leaders in their sectors .",
+            "Poyry Energy GmbH is Austria 's leading engineering and consulting company in the energy , infrastructure and environment sector , owned by Poyry Plc. and the Austrian Verbund AG .",
+            "Vacon aims to establish its presence in the solar energy business in various parts of the world towards the end of 2010 , said Olli Teva , marketing director renewable energy applications ."
+          ]
+        },
+        "positive_as_negative": {
+          "count": 5,
+          "examples": [
+            "Pre-tax loss totaled EUR 0.3 mn , compared to a loss of EUR 2.2 mn in the first quarter of 2005 .",
+            "Net profit was 35.5 mln compared with 29.8 mln .",
+            "Paper maker Stora Enso Oyj said Friday it has been acquitted of charges that it participated in a paper price-fixing conspiracy in the United States ."
+          ]
+        },
+        "positive_as_neutral": {
+          "count": 25,
+          "examples": [
+            "Ixonos estimates that it will hire 20 specialists in mechanical engineering , electronics design , and R&D for its new unit in Jyvaeskylae by the end of 2009 .",
+            "The concept enables a commercially affordable way to manufacture high-quality TCO coated glass for the solar industry .",
+            "It currently employs about 750 people and expects headcount to reach 1,000 by end of 2007 ."
+          ]
+        }
+      }
+    },
+    "finbert": {
+      "model_name": "finbert",
+      "total_samples": 485,
+      "correct": 423,
+      "incorrect": 62,
+      "accuracy": 0.8721649484536083,
+      "confusion_matrix": [
+        [
+          55,
+          4,
+          2
+        ],
+        [
+          10,
+          249,
+          29
+        ],
+        [
+          2,
+          15,
+          119
+        ]
+      ],
+      "error_patterns": {
+        "negative_as_neutral": {
+          "count": 4,
+          "examples": [
+            "Outokumpu 's steel mill in Tornio , in Finland , is the suspected source .",
+            "Stora Enso 's target has been cut to EUR 4.85 from EUR 5.55 and Holmen 's target -- to SEK 135 from SEK 150 .",
+            "The reduction notice applied to 17 people ."
+          ]
+        },
+        "negative_as_positive": {
+          "count": 2,
+          "examples": [
+            "Return on investment ROI was 4.1 % compared to 43.8 % in the first half of 2008 .",
+            "Finnish power supply solutions and systems provider Efore Oyj said its net loss widened to 3.2 mln euro $ 4.2 mln for the first quarter of fiscal 2006-2007 ending October 31 , 2007 from 900,000 euro $ 1.2 mln for the same period of fiscal 2005-06 ."
+          ]
+        },
+        "neutral_as_negative": {
+          "count": 10,
+          "examples": [
+            "When cruising , the revs fall as less engine output is required .",
+            "Garmin fell 4.5 percent to $ 34.53 at 1:33 p.m. in New York , while Google slid 0.7 percent at $ 576.50 .",
+            "Sales fell abroad but increased in Finland ."
+          ]
+        },
+        "neutral_as_positive": {
+          "count": 29,
+          "examples": [
+            "Aspo 's strong company brands - ESL Shipping , Leipurin , Telko and Kaukomarkkinat - aim to be the market leaders in their sectors .",
+            "Poyry Energy GmbH is Austria 's leading engineering and consulting company in the energy , infrastructure and environment sector , owned by Poyry Plc. and the Austrian Verbund AG .",
+            "Vacon aims to establish its presence in the solar energy business in various parts of the world towards the end of 2010 , said Olli Teva , marketing director renewable energy applications ."
+          ]
+        },
+        "positive_as_negative": {
+          "count": 2,
+          "examples": [
+            "Pre-tax loss totaled EUR 0.3 mn , compared to a loss of EUR 2.2 mn in the first quarter of 2005 .",
+            "Net profit was 35.5 mln compared with 29.8 mln ."
+          ]
+        },
+        "positive_as_neutral": {
+          "count": 15,
+          "examples": [
+            "It currently employs about 750 people and expects headcount to reach 1,000 by end of 2007 .",
+            "In the Asia-Pacific region , Visa Wave is available in Malaysia , Taiwan and South Korea and will be expanded to Japan and Southeast Asia this year , Jung added .",
+            "The contract was signed in August with Papua New Guinea-based Lihir Gold Ltd ASX : LGL ."
+          ]
+        }
+      }
+    }
+  },
+  "disagreements": {
+    "total": 87,
+    "percentage": 0.17938144329896907,
+    "by_type": {
+      "2-way split": 84,
+      "3-way split": 3
+    }
+  },
+  "hard_samples": {
+    "total": 1,
+    "percentage": 0.002061855670103093,
+    "examples": [
+      {
+        "text": "Expense ratio was 102.6 % compared to 92.9 % in the corresponding period in 2005 .",
+        "true_label_name": "negative",
+        "avg_confidence": 0.5909630060195923
+      }
+    ]
+  },
+  "domain_insights": {
+    "finbert_only_correct": 30,
+    "bert_only_correct": 11,
+    "both_correct": 393,
+    "both_wrong": 51,
+    "finbert_advantage_examples": [
+      "Ixonos estimates that it will hire 20 specialists in mechanical engineering , electronics design , and R&D for its new unit in Jyvaeskylae by the end of 2009 .",
+      "As a result of the cancellation , the maximum increase of Citycon 's share capital on the basis of the convertible bonds decreased from EUR 23,383,927.80 to EUR 22,901,784.75 .",
+      "Creating interfaces that are more similar to interactions in the real world can enable experiences that are more natural and intuitive , in the same way that modern games and movies are more immersive through the use of realistic 3-D graphics .",
+      "Only L+\u00c6nnen Tehtaat showed a loss , but it has only recently started streamlining measures .",
+      "The members of the management team will contribute to the adjustment measures with temporary salary cut of 5 % ."
+    ]
+  }
+}
