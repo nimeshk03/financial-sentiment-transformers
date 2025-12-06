@@ -1,0 +1,58 @@
+{
+  "sentiment_threshold": {
+    "total_return": 0.0003150039962953599,
+    "market_return": 0.0006804753300642119,
+    "excess_return": -0.000365471333768852,
+    "volatility": 0.019527066786795184,
+    "sharpe_ratio": 0.5890286405034685,
+    "max_drawdown": -0.002427396745513029,
+    "num_trades": 5,
+    "win_rate": 0.4,
+    "avg_win": 0.00159933077488275,
+    "avg_loss": -0.0009597205017510333,
+    "profit_factor": 1.1109698236550691,
+    "num_days": 7
+  },
+  "long_only": {
+    "total_return": 0.001413070474255651,
+    "market_return": 0.0006804753300642119,
+    "excess_return": 0.0007325951441914391,
+    "volatility": 0.018542308145066414,
+    "sharpe_ratio": 2.7497707741099657,
+    "max_drawdown": -0.0017823532991586549,
+    "num_trades": 3,
+    "win_rate": 0.6666666666666666,
+    "avg_win": 0.00159933077488275,
+    "avg_loss": -0.0017823532991587,
+    "profit_factor": 1.7946282318299749,
+    "num_days": 7
+  },
+  "momentum": {
+    "total_return": 0.0018005976153383507,
+    "market_return": 0.0006804753300642119,
+    "excess_return": 0.0011201222852741388,
+    "volatility": 0.03482667004302519,
+    "sharpe_ratio": 1.8747293013940127,
+    "max_drawdown": -0.0028149983883858365,
+    "num_trades": 2,
+    "win_rate": 0.5,
+    "avg_win": 0.0046286255772647,
+    "avg_loss": -0.0028149983883858,
+    "profit_factor": 1.6442729048661677,
+    "num_days": 7
+  },
+  "rolling_3d": {
+    "total_return": 0.003201129316813267,
+    "market_return": 0.0006804753300642119,
+    "excess_return": 0.002520653986749055,
+    "volatility": 0.012690124253308488,
+    "sharpe_ratio": 9.074128313718942,
+    "max_drawdown": 0.0,
+    "num_trades": 2,
+    "win_rate": 1.0,
+    "avg_win": 0.00159933077488275,
+    "avg_loss": 0,
+    "profit_factor": Infinity,
+    "num_days": 7
+  }
+}
