@@ -1,6 +1,10 @@
 # Financial Sentiment Analysis - Multi-Model Transformer Comparison
 
+[![Hugging Face Spaces](https://img.shields.io/badge/Demo-Hugging%20Face%20Spaces-blue)](https://huggingface.co/spaces/nimeshk03/financial-sentiment-dashboard)
+
 A comprehensive pipeline benchmarking **four transformer architectures** (BERT, RoBERTa, DistilBERT, FinBERT) on financial sentiment classification, with trading signal generation and backtesting capabilities.
+
+**[Live Demo](https://huggingface.co/spaces/nimeshk03/financial-sentiment-dashboard)**
 
 ## Project Overview
 
@@ -72,14 +76,15 @@ This project demonstrates:
   - 4 trading strategies implemented
   - Best strategy: Rolling 3d sentiment (+0.32% return, 9.07 Sharpe)
 
-### Phase 4: Deployment & Documentation [IN PROGRESS]
+### Phase 4: Deployment & Documentation [COMPLETED]
 
 - [x] **Milestone 4.1**: Streamlit Dashboard
   - Model comparison visualizations
   - Live sentiment by ticker
   - Backtest results display
-- [ ] **Milestone 4.2**: Documentation
-- [ ] **Milestone 4.3**: Deployment to Hugging Face Spaces
+- [x] **Milestone 4.2**: Documentation
+- [x] **Milestone 4.3**: Deployment to Hugging Face Spaces
+  - Live at: https://huggingface.co/spaces/nimeshk03/financial-sentiment-dashboard
 - [ ] **Milestone 4.4**: Demo Video
 
 ## Project Structure
