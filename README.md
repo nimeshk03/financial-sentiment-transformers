@@ -39,53 +39,53 @@ This project demonstrates:
 
 ## Current Progress
 
-### Phase 1 : Data & Baseline [COMPLETED]
+### Data & Baseline [COMPLETED]
 
-- [x] **Milestone 1.1**: Environment Setup (Docker, dependencies)
-- [x] **Milestone 1.2**: Data Loading & Exploration (Financial PhraseBank)
-- [x] **Milestone 1.3**: Tokenization Pipeline (unified for all models)
-- [x] **Milestone 1.4**: BERT Baseline with frozen encoder (62.4% accuracy)
+- [x] Environment Setup (Docker, dependencies)
+- [x] Data Loading & Exploration (Financial PhraseBank)
+- [x] Tokenization Pipeline (unified for all models)
+- [x] BERT Baseline with frozen encoder (62.4% accuracy)
 
-### Phase 2 : Model Comparison [COMPLETED]
+### Model Comparison [COMPLETED]
 
-- [x] **Milestone 2.1**: Standardized Training Setup
+- [x] Standardized Training Setup
   - Class weights for imbalanced data
   - Learning rate scheduler (linear warmup + decay)
   - Gradient clipping & early stopping
-- [x] **Milestone 2.2**: Fine-tune all four models (see Results above)
-- [x] **Milestone 2.4**: Build comparison table
+- [x] Fine-tune all four models (see Results above)
+- [x] Build comparison table
 
-### Phase 3: Analysis & Trading Signals [COMPLETED]
+### Analysis & Trading Signals [COMPLETED]
 
-- [x] **Milestone 3.1**: Error Analysis
+- [x] Error Analysis
   - 87 disagreements (17.9%) between models
   - FinBERT outperforms BERT on 30 samples where BERT fails
   - Confusion matrices and agreement visualizations generated
-- [x] **Milestone 3.2**: Model Selection for Deployment
+- [x] Model Selection for Deployment
   - FinBERT recommended for accuracy-critical applications
   - DistilBERT for speed/cost-critical applications
-- [x] **Milestone 3.3**: News Ingestion Pipeline
+- [x] News Ingestion Pipeline
   - Yahoo Finance news fetching for 10 tickers
   - Headline cleaning and deduplication
   - FinBERT sentiment predictions
-- [x] **Milestone 3.4**: Sentiment Aggregation
+- [x] Sentiment Aggregation
   - Daily sentiment scores with rolling averages (3d, 7d)
   - Sentiment momentum calculation
   - Price data alignment for backtesting
-- [x] **Milestone 3.5**: Backtesting Framework
+- [x] Backtesting Framework
   - 4 trading strategies implemented
   - Best strategy: Rolling 3d sentiment (+0.32% return, 9.07 Sharpe)
 
-### Phase 4: Deployment & Documentation [COMPLETED]
+### Deployment & Documentation [COMPLETED]
 
-- [x] **Milestone 4.1**: Streamlit Dashboard
+- [x] Streamlit Dashboard
   - Model comparison visualizations
   - Live sentiment by ticker
   - Backtest results display
-- [x] **Milestone 4.2**: Documentation
-- [x] **Milestone 4.3**: Deployment to Hugging Face Spaces
+- [x] Documentation
+- [x] Deployment to Hugging Face Spaces
   - Live at: https://huggingface.co/spaces/nimeshk03/financial-sentiment-dashboard
-- [ ] **Milestone 4.4**: Demo Video
+
 
 ## Project Structure
 
