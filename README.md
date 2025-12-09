@@ -21,8 +21,6 @@ A comprehensive pipeline benchmarking **four transformer architectures** (BERT, 
 - [Technical Details](#technical-details)
 - [Trading Strategies](#trading-strategies)
 - [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [Citation](#citation)
 - [License](#license)
 
 ## Project Overview
@@ -307,48 +305,6 @@ STOCK_TICKERS = ['AAPL', 'AMZN', 'BAC', 'GLD', 'GOOGL',
 - **GPU Training**: Use Google Colab or cloud GPU for training all models
 - **Inference**: CPU is sufficient for real-time inference (0.2-0.7ms per sample)
 - **Memory**: DistilBERT uses 40% less memory than BERT/FinBERT
-
-## Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes using [conventional commits](https://www.conventionalcommits.org/)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
-
-### Development Setup
-
-```bash
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/financial-sentiment-transformers.git
-cd financial-sentiment-transformers
-
-# Build and run tests
-docker compose build
-docker compose run --rm app pytest -v
-```
-
-### Code Style
-
-- Follow PEP 8 guidelines
-- Use type hints where applicable
-- Write docstrings for public functions
-- Add tests for new features
-
-## Citation
-
-If you use this project in your research, please cite:
-
-```bibtex
-@software{kulatunga2024financial,
-  author = {Kulatunga, Nimesh},
-  title = {Financial Sentiment Analysis: Multi-Model Transformer Comparison},
-  year = {2024},
-  url = {https://github.com/nimeshk03/financial-sentiment-transformers}
-}
-```
 
 ## License
 
