@@ -1,10 +1,29 @@
 # Financial Sentiment Analysis - Multi-Model Transformer Comparison
 
 [![Hugging Face Spaces](https://img.shields.io/badge/Demo-Hugging%20Face%20Spaces-blue)](https://huggingface.co/spaces/nimeshk03/financial-sentiment-dashboard)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 
 A comprehensive pipeline benchmarking **four transformer architectures** (BERT, RoBERTa, DistilBERT, FinBERT) on financial sentiment classification, with trading signal generation and backtesting capabilities.
 
 **[Live Demo](https://huggingface.co/spaces/nimeshk03/financial-sentiment-dashboard)**
+
+---
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Results](#results)
+- [Models Under Comparison](#models-under-comparison)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Technical Details](#technical-details)
+- [Trading Strategies](#trading-strategies)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Citation](#citation)
+- [License](#license)
 
 ## Project Overview
 
@@ -37,54 +56,14 @@ This project demonstrates:
 | DistilBERT | 66M | `distilbert-base-uncased` | 40% smaller, 2x faster |
 | FinBERT | 110M | `ProsusAI/finbert` | Domain-specific pre-training |
 
-## Current Progress
+## Features
 
-### Data & Baseline [COMPLETED]
-
-- [x] Environment Setup (Docker, dependencies)
-- [x] Data Loading & Exploration (Financial PhraseBank)
-- [x] Tokenization Pipeline (unified for all models)
-- [x] BERT Baseline with frozen encoder (62.4% accuracy)
-
-### Model Comparison [COMPLETED]
-
-- [x] Standardized Training Setup
-  - Class weights for imbalanced data
-  - Learning rate scheduler (linear warmup + decay)
-  - Gradient clipping & early stopping
-- [x] Fine-tune all four models (see Results above)
-- [x] Build comparison table
-
-### Analysis & Trading Signals [COMPLETED]
-
-- [x] Error Analysis
-  - 87 disagreements (17.9%) between models
-  - FinBERT outperforms BERT on 30 samples where BERT fails
-  - Confusion matrices and agreement visualizations generated
-- [x] Model Selection for Deployment
-  - FinBERT recommended for accuracy-critical applications
-  - DistilBERT for speed/cost-critical applications
-- [x] News Ingestion Pipeline
-  - Yahoo Finance news fetching for 10 tickers
-  - Headline cleaning and deduplication
-  - FinBERT sentiment predictions
-- [x] Sentiment Aggregation
-  - Daily sentiment scores with rolling averages (3d, 7d)
-  - Sentiment momentum calculation
-  - Price data alignment for backtesting
-- [x] Backtesting Framework
-  - 4 trading strategies implemented
-  - Best strategy: Rolling 3d sentiment (+0.32% return, 9.07 Sharpe)
-
-### Deployment & Documentation [COMPLETED]
-
-- [x] Streamlit Dashboard
-  - Model comparison visualizations
-  - Live sentiment by ticker
-  - Backtest results display
-- [x] Documentation
-- [x] Deployment to Hugging Face Spaces
-  - Live at: https://huggingface.co/spaces/nimeshk03/financial-sentiment-dashboard
+- **Multi-Model Benchmarking**: Fair comparison of BERT, RoBERTa, DistilBERT, and FinBERT
+- **End-to-End Pipeline**: From raw financial text to trading signals
+- **News Sentiment Analysis**: Real-time sentiment from Yahoo Finance headlines
+- **Backtesting Framework**: 4 trading strategies with performance metrics
+- **Interactive Dashboard**: Streamlit-based visualization and exploration
+- **Production-Ready**: Docker containerization with comprehensive tests
 
 
 ## Project Structure
@@ -232,6 +211,14 @@ docker compose run --rm -p 8501:8501 app streamlit run app/dashboard.py --server
 
 Open http://localhost:8501 in your browser.
 
+### Environment Variables
+
+No API keys are required for basic functionality. The project uses:
+- **Yahoo Finance**: Public API for news and price data (no key needed)
+- **Hugging Face**: Public model downloads (no key needed for inference)
+
+> **Note**: For production deployments or high-volume usage, consider setting up rate limiting or caching.
+
 ## Technical Details
 
 ### Training Configuration
@@ -303,16 +290,86 @@ STOCK_TICKERS = ['AAPL', 'AMZN', 'BAC', 'GLD', 'GOOGL',
                  'JPM', 'MSFT', 'NVDA', 'SPY', 'TLT']
 ```
 
+## Troubleshooting
+
+### Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| `CUDA out of memory` | Reduce `batch_size` in training config or use CPU |
+| `Dataset not found` | Ensure `all-data.csv` is in `data/raw/` directory |
+| `Docker build fails` | Check Docker daemon is running; try `docker system prune` |
+| `Model download slow` | Models are cached after first download in `~/.cache/huggingface` |
+| `Yahoo Finance rate limit` | Add delays between requests or reduce ticker count |
+
+### Performance Tips
+
+- **GPU Training**: Use Google Colab or cloud GPU for training all models
+- **Inference**: CPU is sufficient for real-time inference (0.2-0.7ms per sample)
+- **Memory**: DistilBERT uses 40% less memory than BERT/FinBERT
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes using [conventional commits](https://www.conventionalcommits.org/)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+### Development Setup
+
+```bash
+# Clone your fork
+git clone https://github.com/YOUR_USERNAME/financial-sentiment-transformers.git
+cd financial-sentiment-transformers
+
+# Build and run tests
+docker compose build
+docker compose run --rm app pytest -v
+```
+
+### Code Style
+
+- Follow PEP 8 guidelines
+- Use type hints where applicable
+- Write docstrings for public functions
+- Add tests for new features
+
+## Citation
+
+If you use this project in your research, please cite:
+
+```bibtex
+@software{kulatunga2024financial,
+  author = {Kulatunga, Nimesh},
+  title = {Financial Sentiment Analysis: Multi-Model Transformer Comparison},
+  year = {2024},
+  url = {https://github.com/nimeshk03/financial-sentiment-transformers}
+}
+```
+
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 
-Nimesh Kulatunga
+**Nimesh Kulatunga**
+
+- GitHub: [@nimeshk03](https://github.com/nimeshk03)
+- Hugging Face: [nimeshk03](https://huggingface.co/nimeshk03)
 
 ## Acknowledgments
 
-- [Financial PhraseBank](https://www.researchgate.net/publication/251231107_Good_Debt_or_Bad_Debt_Detecting_Semantic_Orientations_in_Economic_Texts) dataset
-- [HuggingFace Transformers](https://huggingface.co/transformers/)
-- [ProsusAI/finbert](https://huggingface.co/ProsusAI/finbert) for domain-specific model
+- [Financial PhraseBank](https://www.researchgate.net/publication/251231107_Good_Debt_or_Bad_Debt_Detecting_Semantic_Orientations_in_Economic_Texts) dataset by Malo et al.
+- [Hugging Face Transformers](https://huggingface.co/transformers/) library
+- [ProsusAI/finbert](https://huggingface.co/ProsusAI/finbert) for domain-specific pre-training
+- [Yahoo Finance](https://finance.yahoo.com/) for news and price data
+
+---
+
+<p align="center">
+  <i>Built with Transformers and Python</i>
+</p>
