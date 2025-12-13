@@ -279,7 +279,15 @@ Four sentiment-based strategies are implemented:
 | Sentiment Threshold | Long if > 0.2, Short if < -0.2 | +0.03% | 0.59 |
 | Long Only | Long if > 0.1, else flat | +0.14% | 2.75 |
 | Momentum | Trade on sentiment momentum | +0.18% | 1.87 |
-| **Rolling 3d** | Long if 3d rolling > 0.15 | **+0.32%** | **9.07** |
+| Rolling 3d | Long if 3d rolling > 0.15 | +0.32% | 9.07 |
+
+> **Important Disclaimer**: These backtest results are based on a **7-day sample with only 2-5 trades per strategy**. The high Sharpe ratios (especially 9.07) are **not statistically significant** and should not be interpreted as realistic performance expectations. Key limitations:
+> - **Sample size**: 7 days is insufficient for reliable statistics
+> - **Trade count**: 2-5 trades cannot establish statistical significance  
+> - **Annualization artifacts**: Sharpe ratios are annualized (`* sqrt(252)`), which amplifies small edges from limited data
+> - **No transaction costs**: Slippage, commissions, and spreads are not included
+>
+> For production use, run backtests with at least 1 year of data: `--price-period 1y`
 
 ## Default Tickers
 
